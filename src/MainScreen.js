@@ -1,21 +1,22 @@
 import React, {Component} from 'react';
 import {
     View,
-    Text,
     StyleSheet,
     Button,
-    NavigatorIOS,
     Alert,
 } from 'react-native';
 import NavigationBar from 'react-native-navbar';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export default class MainScreen extends React.Component{
+
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.mainContent}>
                     <Button title={"Alert Button"} onPress={createAlert} />
                     <Button title={"Photo From Unsplash API"} onPress={() => this.props.navigation.navigate('Gallery')} />
+                    <Button title={"Photo From Gallery"} onPress={() => this.props.navigation.navigate('CameraRoll')} />
                 </View>
             </View>
         );
@@ -46,6 +47,8 @@ const styles = StyleSheet.create({
         color: 'white'
     }
 });
+
+    
 
 const createAlert = () =>
   Alert.alert(
