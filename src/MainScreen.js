@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
     View,
     Text,
@@ -6,23 +6,23 @@ import {
     Button,
     NavigatorIOS,
     Alert,
-    ScrollView
 } from 'react-native';
-import { create } from 'react-test-renderer';
+// import { create } from 'react-test-renderer';
 import NavigationBar from 'react-native-navbar';
 
 export default class MainScreen extends React.Component{
     render() {
         return (
             <View style={styles.container}>
-                <NavigationBar title={navTitle} />
                 <View style={styles.mainContent}>
                     <Button title={"Alert Button"} onPress={createAlert} />
+                    <Button title={"Image Screen"} onPress={() => this.props.navigation.navigate('GalleryScreen')} />
                 </View>
             </View>
         );
     }
 }
+
 
 const navTitle = {
     title: "Meet 5"
@@ -36,15 +36,6 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         alignItems: 'center'
     },
-    
-    navigationStyle:{
-        alignItems: "center"
-    },
-    headerText: {
-        color: 'white',
-        fontSize: 20,
-        padding: 26
-    },
     mainContent:{
         flex: 1,
         justifyContent: 'space-around',
@@ -56,18 +47,15 @@ const styles = StyleSheet.create({
     }
 });
 
-// const App = () => {
-    const createAlert = () => 
-        Alert.alert(
-            "Primakara Luar Biasa!",
-            "By: Ariesta Agung",
-            [
-                {
-                    text: "Back",
-                    style: "cancel"
-                }
-            ], 
-            {cancelable: false}
-        )
-          
-// }
+const createAlert = () =>
+  Alert.alert(
+    'Primakara Luar Biasa!',
+    'By: Ariesta Agung',
+    [
+      {
+        text: 'Dismiss',
+        style: 'cancel',
+      },
+    ],
+    {cancelable: false},
+  );
