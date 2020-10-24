@@ -5,6 +5,8 @@ This is a simple application made with React Native
 <ul>
   <li>Button with Alert</li>
   <li>Simple Navigation Bar</li>
+  <li>Get image from Unsplash API</li>
+  <li>Get image from phone gallery</li> 
 </ul>
 
 <b>Made with ❤ by Ariesta</b>
