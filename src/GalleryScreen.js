@@ -35,34 +35,57 @@ export default class GalleryScreen extends React.Component {
     //       console.error(error)
     //     })
     // }
-    componentDidMount(){
+
+    getImgURL(){
         this.setState({ isLoading: true });
-        getImgList()
+        var imgURL = []
+        var singleURL = ""
+        var data = ""
+        fetch('https://api.unsplash.com/photos?client_id=ETS4tGzlzz2zQAXEEYsC-7N7WL7oPgS3Ug3MKI40xFo', {
+        method: 'GET'
+    })
+    .then((response) => response.json())
+    .then((responseJSON) => {
+        // alert(JSON.stringify(responseJSON))
+        singleURL = responseJSON
+        // alert(JSON.stringify(singleURL[0].urls.full))
+        for (var i = 0; i < 10; i++){
+            data = responseJSON
+            singleURL = JSON.stringify(data[i].urls.full)
+            imgURL.push(
+                singleURL
+            )
+        }
+        alert(imgURL)
         this.setState({isLoading: false});
+
+    })
+    .catch((error) => {
+        alert(JSON.stringify(error))
+        this.setState({isLoading: false});
+    }) 
+        return imgURL
+    }
+
+    componentDidMount(){
+        
+        this.getImgURL()
+        
     }
     render(){
+        
         return (
             <View style={styles.container} on>
                 <Text>Testing</Text>
                 {this.state.isLoading && <ActivityIndicator color={"#fff"}/>}
+                
             </View>
         );
     }
 }
 
 const getImgList = () => {
-    fetch('https://api.unsplash.com/photos?client_id=ETS4tGzlzz2zQAXEEYsC-7N7WL7oPgS3Ug3MKI40xFo', {
-        method: 'GET'
-    })
-    .then((response) => response.json())
-    .then((responseJSON) => {
-        alert(JSON.stringify(responseJSON))
-        console.log(responseJSON)
-    })
-    .catch((error) => {
-        alert(JSON.stringify(error))
-        console.error(error)
-    }) 
+    
 }
 
 const headerTitle = {
