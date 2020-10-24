@@ -7,7 +7,6 @@ import {
     NavigatorIOS,
     Alert,
 } from 'react-native';
-// import { create } from 'react-test-renderer';
 import NavigationBar from 'react-native-navbar';
 
 export default class MainScreen extends React.Component{
@@ -16,7 +15,7 @@ export default class MainScreen extends React.Component{
             <View style={styles.container}>
                 <View style={styles.mainContent}>
                     <Button title={"Alert Button"} onPress={createAlert} />
-                    <Button title={"Image Screen"} onPress={() => this.props.navigation.navigate('GalleryScreen')} />
+                    <Button title={"Photo From Unsplash API"} onPress={() => this.props.navigation.navigate('Gallery')} />
                 </View>
             </View>
         );
@@ -39,6 +38,7 @@ const styles = StyleSheet.create({
     mainContent:{
         flex: 1,
         justifyContent: 'space-around',
+        // flexDirection: 'row',
         alignItems: 'center'
     },
     alertBtn:{

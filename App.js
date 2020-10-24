@@ -12,8 +12,8 @@ class App extends React.Component {
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="MainScreen" component={MainScreen} />
-          <Stack.Screen name="GalleryScreen" component={GalleryScreen} />
+          <Stack.Screen name="Home" component={MainScreen}  />
+          <Stack.Screen name="Gallery" component={GalleryScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     );
