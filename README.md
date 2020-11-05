@@ -7,6 +7,8 @@ This is a simple application made with React Native
   <li>Simple Navigation Bar</li>
   <li>Get image from Unsplash API</li>
   <li>Get image from phone gallery</li> 
+  <li>Show / Hide text from Button</li>
+  <li>Get text from Text Input</li> 
 </ul>
 
 <b>Made with ❤ by Ariesta</b>
