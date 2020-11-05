@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from './src/MainScreen';
 import GalleryScreen from './src/GalleryScreen';
 import CameraRollScreen from './src/CameraRollScreen';
+import HelloWorld from './src/HelloWorldScreens';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ class App extends React.Component {
           <Stack.Screen name="Home" component={MainScreen}  />
           <Stack.Screen name="Gallery" component={GalleryScreen} />
           <Stack.Screen name="CameraRoll" component={CameraRollScreen}/>
+          <Stack.Screen name="HelloWorld" component={HelloWorld} />
         </Stack.Navigator>
       </NavigationContainer>
     );

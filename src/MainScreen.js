@@ -17,6 +17,8 @@ export default class MainScreen extends React.Component{
                     <Button title={"Alert Button"} onPress={createAlert} />
                     <Button title={"Photo From Unsplash API"} onPress={() => this.props.navigation.navigate('Gallery')} />
                     <Button title={"Photo From Gallery"} onPress={() => this.props.navigation.navigate('CameraRoll')} />
+                    <Button title={"Hello World"} onPress={() => this.props.navigation.navigate('HelloWorld')} />
+
                 </View>
             </View>
         );
